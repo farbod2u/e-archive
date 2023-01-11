@@ -1,3 +1,5 @@
-FROM amazoncorretto:11.0.17
-COPY ./target/write.jar  /home/write.jar
-CMD ["java", "-jar", "/home/write.jar"]
+FROM amazoncorretto:17.0.5
+ENV JAR_NAME=write-file
+COPY ./target/$JAR_NAME.jar  /home/$JAR_NAME.jar
+RUN ln -s /home/$JAR_NAME.jar /home/run.jar
+CMD ["java", "-jar", "/home/run.jar"]

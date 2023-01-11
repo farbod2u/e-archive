@@ -1,0 +1,34 @@
+services:
+  file-manager-db:
+    image: mysql
+    networks:
+      - file-2-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=file-manager
+    container_name: file-manager-db
+
+  file-read-app:
+    image: file-management-read:latest
+    restart: on-failure
+    ports:
+      - "8081:8081"
+    networks:
+      - file-2-db
+    depends_on:
+      - file-manager-db
+    container_name: file-read-app
+
+  file-write-app:
+    image: file-management-write:latest
+    restart: on-failure
+    ports:
+      - "8082:8082"
+    networks:
+      - file-2-db
+    depends_on:
+      - file-manager-db
+    container_name: file-write-app
+
+networks:
+  file-2-db: { }

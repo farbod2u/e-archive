@@ -13,7 +13,7 @@ services:
     image: file-management-read:latest
     restart: on-failure
     ports:
-      - "8080:8080"
+      - "8081:8081"
     networks:
       - read-2-db
     depends_on:

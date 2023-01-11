@@ -18,5 +18,6 @@
         <module>lib-exception</module>
         <module>lib-file-entities</module>
         <module>write-file</module>
+        <module>read-file</module>
     </modules>
 </project>

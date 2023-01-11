@@ -17,5 +17,6 @@
     <modules>
         <module>lib-exception</module>
         <module>lib-file-entities</module>
+        <module>write-file</module>
     </modules>
 </project>

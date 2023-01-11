@@ -1,0 +1,26 @@
+
+services:
+  mydb:
+    image: mysql
+    networks:
+      - write-2-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpass
+      - MYSQL_DATABASE=file-manager
+    container_name: mydb
+
+  myapp:
+    build:
+      dockerfile: Dockerfile
+    image: file-management-write:latest
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    networks:
+      - write-2-db
+    depends_on:
+      - mydb
+    container_name: myapp
+
+networks:
+  write-2-db: {}

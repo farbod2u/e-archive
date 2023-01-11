@@ -16,5 +16,6 @@
 
     <modules>
         <module>lib-exception</module>
+        <module>lib-file-entities</module>
     </modules>
 </project>

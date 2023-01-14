@@ -1,13 +1,13 @@
-package io.github.farbod2u.libmainentities;
+package io.github.farbod2u.branchservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LibMainEntitiesApplication {
+public class BranchServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LibMainEntitiesApplication.class, args);
+        SpringApplication.run(BranchServiceApplication.class, args);
     }
 
 }

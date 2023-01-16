@@ -17,5 +17,6 @@ An electronic archiving system to store all image files of all Branches of an Or
 ## Services  Port
 
 - branch-service: **8091**
+- archive-service: **8092**
 - read-file: **8081**
 - write-file: **8082**

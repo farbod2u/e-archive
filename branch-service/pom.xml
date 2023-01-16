@@ -23,6 +23,18 @@
         </dependency>
 
         <dependency>
+            <groupId>io.github.farbod2u</groupId>
+            <artifactId>lib-main-entities</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.farbod2u</groupId>
+            <artifactId>lib-exception</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
@@ -35,6 +47,7 @@
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

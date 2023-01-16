@@ -1,6 +1,6 @@
 package io.github.farbod2u.read.controller;
 
-import io.github.farbod2u.entity.Doc;
+import io.github.farbod2u.entity.FileDoc;
 import io.github.farbod2u.read.service.DocService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -25,7 +25,7 @@ public class DocController {
     @SneakyThrows
     @GetMapping(value = "/{id}")
     public ResponseEntity<InputStreamResource> getById(@PathVariable("id") Long id) {
-        Doc entity = docService.getById(id);
+        FileDoc entity = docService.getById(id);
 
         return ResponseEntity.ok()
                 .contentLength(entity.getContent().length())

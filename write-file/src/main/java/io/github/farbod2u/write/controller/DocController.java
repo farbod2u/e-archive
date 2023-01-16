@@ -1,6 +1,6 @@
 package io.github.farbod2u.write.controller;
 
-import io.github.farbod2u.entity.Doc;
+import io.github.farbod2u.entity.FileDoc;
 import io.github.farbod2u.write.service.DocService;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -22,7 +22,7 @@ public class DocController {
 
     @PostMapping(consumes = {MediaType.MULTIPART_FORM_DATA_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<String> save(@RequestParam("file") MultipartFile file) {
-        Doc entity = docService.save(file);
+        FileDoc entity = docService.save(file);
         return ResponseEntity.ok()
                 .body("{'id' : '" + entity.getId().toString() + "'}");
     }
@@ -30,7 +30,7 @@ public class DocController {
     @SneakyThrows
     @GetMapping(value = "/{id}")
     public ResponseEntity<InputStreamResource> getById(@PathVariable("id") Long id) {
-        Doc entity = docService.getById(id);
+        FileDoc entity = docService.getById(id);
 
         return ResponseEntity.ok()
                 .contentLength(entity.getContent().length())

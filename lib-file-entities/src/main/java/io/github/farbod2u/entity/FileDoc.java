@@ -16,7 +16,7 @@ import java.sql.Blob;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Doc {
+public class FileDoc {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

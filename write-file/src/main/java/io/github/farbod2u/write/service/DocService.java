@@ -1,6 +1,6 @@
 package io.github.farbod2u.write.service;
 
-import io.github.farbod2u.entity.Doc;
+import io.github.farbod2u.entity.FileDoc;
 import io.github.farbod2u.exception.EntityNotFoundException;
 import io.github.farbod2u.exception.RequestException;
 import io.github.farbod2u.write.repository.DocRepository;
@@ -19,8 +19,8 @@ public class DocService {
 
     private final DocRepository docRepository;
 
-    public Doc save(MultipartFile file) {
-        Doc entity = new Doc();
+    public FileDoc save(MultipartFile file) {
+        FileDoc entity = new FileDoc();
         try {
             entity.setContent(BlobProxy.generateProxy(file.getInputStream(), file.getSize()));
         } catch (Exception e) {
@@ -29,7 +29,7 @@ public class DocService {
         return docRepository.save(entity);
     }
 
-    public Doc getById(Long id) {
+    public FileDoc getById(Long id) {
         return docRepository.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 import java.sql.Timestamp;
 
@@ -19,7 +20,9 @@ public class Doc {
 
     @Id
     private String _id;
-    private String folderId;
     private Timestamp docDate;
     private String fileName;
+
+    @DocumentReference(lookup = "{ 'folderCode' : ?#{#traget} }")
+    private Folder folder;
 }

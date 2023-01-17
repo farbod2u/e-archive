@@ -12,7 +12,7 @@ services:
     image: file-management-read:latest
     restart: on-failure
     ports:
-      - "8081:8081"
+      - "8093:8093"
     networks:
       - file-2-db
     depends_on:
@@ -23,7 +23,7 @@ services:
     image: file-management-write:latest
     restart: on-failure
     ports:
-      - "8082:8082"
+      - "8094:8094"
     networks:
       - file-2-db
     depends_on:

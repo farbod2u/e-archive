@@ -1,0 +1,26 @@
+services:
+  mongo-archive:
+    image: mongo
+    container_name: mongo-archive
+    ports:
+      - "27092:27017"
+    volumes:
+      - data:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+  mongo-exp-archive:
+    image: mongo-express
+    container_name: mongo-exp-archive
+    restart: always
+    ports:
+      - "8082:8081"
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+      - ME_CONFIG_MONGODB_SERVER=mongo-archive
+volumes:
+  data: {}
+#networks:
+#  default:
+#    name: mongodb-net-archive

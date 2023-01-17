@@ -1,4 +1,4 @@
-package io.gethub.farbod2u.archiveservice;
+package io.github.farbod2u.archiveservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
